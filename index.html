@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Acompanhe as ações do grêmio, envie sugestões e encontre informações importantes para os estudantes."
+    />
+    <meta name="theme-color" content="#0b3d3b" />
+    <title>Grêmio Estudantil — sua voz, suas ideias</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#inicio" aria-label="Grêmio Estudantil, início">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span class="brand-copy">
+          <strong>GRÊMIO</strong>
+          <span>ESTUDANTIL</span>
+        </span>
+      </a>
+      <nav class="main-nav" aria-label="Navegação principal">
+        <a href="#participar">Participe</a>
+        <a href="#informacoes">Informações</a>
+        <a href="#agenda">Agenda</a>
+      </nav>
+      <button class="button button-outline header-login" id="open-login" type="button">
+        Área do grêmio <span aria-hidden="true">↗</span>
+      </button>
+      <button
+        class="menu-toggle"
+        id="menu-toggle"
+        type="button"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+      >
+        <span></span><span></span>
+      </button>
+    </header>
+
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Navegação móvel" hidden>
+      <a href="#participar">Participe</a>
+      <a href="#informacoes">Informações</a>
+      <a href="#agenda">Agenda</a>
+      <button class="button button-outline" id="open-login-mobile" type="button">Área do grêmio</button>
+    </nav>
+
+    <main>
+      <section class="hero" id="inicio">
+        <div class="hero-glow" aria-hidden="true"></div>
+        <div class="hero-content">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> A voz dos estudantes</p>
+          <h1>Uma escola melhor<br />começa com <span>a gente.</span></h1>
+          <p class="hero-description">
+            Ideias, informação e participação. Este espaço é seu — acompanhe o grêmio e ajude a
+            transformar a nossa escola.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-light" href="#participar">Quero participar <span aria-hidden="true">↘</span></a>
+            <a class="text-link" href="#agenda">Ver o que vem por aí <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="hero-note">
+            <span class="note-icon" aria-hidden="true">✳</span>
+            <span>Sua opinião importa. Sempre.</span>
+          </div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="art-orbit orbit-one"></div>
+          <div class="art-orbit orbit-two"></div>
+          <div class="art-note note-one"><span>ideias</span><b>✳</b></div>
+          <div class="art-note note-two"><b>↗</b><span>ação</span></div>
+          <div class="art-core"><span>G</span><small>JUNTOS</small></div>
+          <div class="art-spark spark-one">✳</div>
+          <div class="art-spark spark-two">✳</div>
+        </div>
+        <div class="hero-bottom">
+          <span>UM ESPAÇO FEITO POR ESTUDANTES, PARA ESTUDANTES</span>
+          <a href="#participar" aria-label="Ir para Participe">↓</a>
+          <span>GRÊMIO ESTUDANTIL</span>
+        </div>
+      </section>
+
+      <section class="section participation-section" id="participar">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow eyebrow-dark">PARTICIPAÇÃO</p>
+            <h2>Tem algo pra dizer?<br /><span>A gente quer ouvir.</span></h2>
+          </div>
+          <p class="section-intro">
+            Um espaço seguro para compartilhar o que está acontecendo e construir ideias melhores
+            para todo mundo.
+          </p>
+        </div>
+        <div class="participation-grid" id="participation-cards"></div>
+      </section>
+
+      <section class="section resources-section" id="informacoes">
+        <div class="section-heading resources-heading">
+          <div>
+            <p class="eyebrow eyebrow-dark">TUDO À MÃO</p>
+            <h2>Encontre o que<br /><span>você precisa.</span></h2>
+          </div>
+          <p class="section-intro">
+            Links úteis, documentos e contatos reunidos em um só lugar.
+          </p>
+        </div>
+        <div class="filter-row" aria-label="Filtrar informações">
+          <button class="filter-chip is-active" data-filter="all" type="button">Tudo</button>
+          <button class="filter-chip" data-filter="resource" type="button">Materiais</button>
+          <button class="filter-chip" data-filter="email" type="button">Contatos</button>
+        </div>
+        <div class="content-grid" id="resource-cards" aria-live="polite"></div>
+      </section>
+
+      <section class="agenda-section" id="agenda">
+        <div class="agenda-inner">
+          <div class="agenda-copy">
+            <p class="eyebrow"><span class="eyebrow-dot"></span> NA ESCOLA</p>
+            <h2>Ideias boas<br />viram <span>acontecimento.</span></h2>
+            <p>
+              Fique por dentro do que o grêmio está organizando. Tem novidade? Ela aparece por
+              aqui.
+            </p>
+            <a class="button button-light" href="#agenda-cards">Acompanhar agenda <span aria-hidden="true">↘</span></a>
+          </div>
+          <div class="agenda-list" id="agenda-cards" aria-live="polite"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="#inicio">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span class="brand-copy"><strong>GRÊMIO</strong><span>ESTUDANTIL</span></span>
+      </a>
+      <p>Feito com participação. <span aria-hidden="true">✳</span></p>
+      <span class="footer-year">© <span id="current-year"></span> Grêmio Estudantil</span>
+    </footer>
+
+    <div class="modal-backdrop" id="login-modal" hidden>
+      <section
+        class="login-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="login-title"
+        aria-describedby="login-description"
+      >
+        <button class="modal-close" id="close-login" type="button" aria-label="Fechar">×</button>
+        <div class="dialog-mark" aria-hidden="true">G</div>
+        <p class="eyebrow eyebrow-dark">ACESSO RESTRITO</p>
+        <h2 id="login-title">Área do grêmio</h2>
+        <p id="login-description">Entre com uma conta autorizada pelo administrador.</p>
+        <form id="login-form">
+          <label for="admin-email">E-mail</label>
+          <input id="admin-email" name="email" type="email" autocomplete="username" required />
+          <label for="admin-password">Senha</label>
+          <input id="admin-password" name="password" type="password" autocomplete="current-password" required />
+          <button class="button button-primary login-submit" type="submit">Entrar <span aria-hidden="true">→</span></button>
+        </form>
+        <button class="signup-toggle" id="reset-password" type="button">Esqueci minha senha</button>
+        <button class="signup-toggle" id="show-signup" type="button">Tem convite? Criar acesso</button>
+        <form id="signup-form" hidden>
+          <p class="signup-note">O administrador precisa adicionar seu e-mail antes de você criar uma senha.</p>
+          <label for="signup-email">E-mail autorizado</label>
+          <input id="signup-email" name="email" type="email" autocomplete="email" required />
+          <label for="signup-password">Crie uma senha (mínimo de 6 caracteres)</label>
+          <input id="signup-password" name="password" type="password" autocomplete="new-password" minlength="6" required />
+          <label for="signup-password-confirm">Confirme a senha</label>
+          <input id="signup-password-confirm" name="passwordConfirm" type="password" autocomplete="new-password" minlength="6" required />
+          <button class="button button-primary login-submit" type="submit">Criar acesso <span aria-hidden="true">→</span></button>
+        </form>
+        <button class="signup-toggle" id="show-login" type="button" hidden>Voltar para entrar</button>
+        <p class="form-feedback" id="login-feedback" role="status"></p>
+      </section>
+    </div>
+
+    <section class="admin-panel" id="admin-panel" hidden aria-labelledby="admin-title">
+      <div class="admin-panel-inner">
+        <div class="admin-heading">
+          <div>
+            <p class="eyebrow eyebrow-dark">PAINEL ADMINISTRATIVO</p>
+            <h2 id="admin-title">Gerenciar conteúdo</h2>
+            <p>Adicione links, materiais, contatos e novidades para os estudantes.</p>
+          </div>
+          <button class="button button-outline" id="logout-button" type="button">Sair</button>
+        </div>
+        <form class="admin-form" id="content-form">
+          <input id="content-id" name="id" type="hidden" />
+          <div class="admin-fields">
+            <div class="field">
+              <label for="content-title">Título</label>
+              <input id="content-title" name="title" maxlength="100" required />
+            </div>
+            <div class="field">
+              <label for="content-type">Tipo</label>
+              <select id="content-type" name="type" required>
+                <option value="complaint">Caixa de reclamação</option>
+                <option value="anonymous">Denúncia anônima</option>
+                <option value="suggestion">Sugestão de melhoria</option>
+                <option value="resource">Material ou link útil</option>
+                <option value="email">E-mail de professor(a)</option>
+                <option value="event">Ação do grêmio / agenda</option>
+              </select>
+            </div>
+            <div class="field field-wide">
+              <label for="content-description">Descrição</label>
+              <textarea id="content-description" name="description" rows="3" maxlength="300"></textarea>
+            </div>
+            <div class="field field-wide">
+              <label for="content-url">Link <span class="optional-label">(opcional para eventos)</span></label>
+              <input id="content-url" name="url" type="url" placeholder="https://" />
+            </div>
+          </div>
+          <div class="admin-form-actions">
+            <button class="button button-primary" id="save-content" type="submit">Publicar conteúdo <span aria-hidden="true">→</span></button>
+            <button class="button button-outline" id="cancel-edit" type="button" hidden>Cancelar edição</button>
+          </div>
+          <p class="form-feedback" id="content-feedback" role="status"></p>
+        </form>
+        <div class="admin-content-list">
+          <h3>Conteúdo publicado</h3>
+          <div id="admin-content-items"></div>
+        </div>
+        <section class="invite-admin" id="invite-admin" hidden aria-labelledby="invite-title">
+          <div class="invite-heading">
+            <h3 id="invite-title">Acessos da equipe</h3>
+            <p>Adicione e-mails autorizados. Cada pessoa cria a própria senha; só você pode gerenciar esta lista.</p>
+          </div>
+          <form id="invite-form" class="invite-form">
+            <div class="field">
+              <label for="invite-email">E-mail da pessoa</label>
+              <input id="invite-email" name="email" type="email" autocomplete="off" required />
+            </div>
+            <button class="button button-primary" type="submit">Autorizar e-mail <span aria-hidden="true">→</span></button>
+          </form>
+          <p class="form-feedback" id="invite-feedback" role="status"></p>
+          <div id="invite-items"></div>
+        </section>
+      </div>
+    </section>
+    <div class="toast" id="site-status" role="status" aria-live="polite"></div>
+  </body>
+</html>
